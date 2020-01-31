@@ -9,7 +9,7 @@ var analyzer;
 
 function preload() {
   turtle = loadModel("assets/turtleMesh.obj", true); //free download from cadnav.com
-  
+
   rapide = loadSound("assets/Rapide.mp3");
   //music credits: Mahmood - Rapide (Universal Music Italia 2020)
 
@@ -93,18 +93,17 @@ function togglePlay() {
 //creating an object to manage the turtles
 function Tartaruga() {
 
-  //random position, size and movements
-  this.x = random(width / 5, width / 5);
-  this.y = random(height / 5, height / 5);
+  //managing position, size and movements
+  this.x = width/5;
+  this.y = height/5;
   this.z = random(-30, 30);
 
-  this.rotation = random(-1, 1) + 0.3;
+  this.rotation = random(-1, 1);
   this.size = random(0.5, 1.5);
 
   this.spawn = function() {
     push();
     scale(this.size);
-    rotateX(frameCount * this.rotation);
     rotateY(frameCount * this.rotation);
     rotateZ(frameCount * this.rotation);
     translate(this.x, this.y, this.z);
